@@ -1,0 +1,11 @@
+**/.serverless
+**/node_modules/
+.DS_Store
+charts/charts
+cluster/charts/**/Chart.lock
+cluster/charts/**/charts
+charts/mosquitto/ca-cert
+charts/mosquitto/ca-crt.txt
+charts/mosquitto/templates/tls
+docker_images/rest/.idea/
+.deploy/

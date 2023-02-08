@@ -1,0 +1,49 @@
+traefik:
+  globalArguments: []
+
+  api:
+    dashboard: false
+    insecure: true
+    port: 8081
+    address: ":8081"
+
+  service:
+    annotations:
+      external-dns.alpha.kubernetes.io/hostname: 18.134.147.100
+
+  ports:
+    mosquitto-ssl:
+      expose: true
+      exposedPort: 8883
+      port: 8883
+      protocol: TCP
+    mosquitto:
+      expose: true
+      exposedPort: 1883
+      port: 1883
+      protocol: TCP
+    influxdb:
+      expose: true
+      exposedPort: 8086
+      port: 8086
+      protocol: TCP
+    mongo:
+      expose: true
+      exposedPort: 27017
+      port: 27017
+      protocol: TCP
+    caiso-app:
+      expose: true
+      exposedPort: 1234
+      port: 1234
+      protocol: TCP
+    caiso-app-2:
+      expose: true
+      exposedPort: 1235
+      port: 1235
+      protocol: TCP
+
+  additionalArguments:
+    - "--log.level=DEBUG"
+#    - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
+#    - "--entrypoints.web.http.redirections.entryPoint.scheme=https"

@@ -9,12 +9,12 @@ traefik:
 
   service:
     annotations:
-      external-dns.alpha.kubernetes.io/hostname: 18.134.147.100
+      external-dns.alpha.kubernetes.io/hostname: {{ .Values.domain }}
 
   ports:
     mosquitto-ssl:
       expose: true
-      exposedPort: 8883
+      exposedPort: 8884
       port: 8883
       protocol: TCP
     mosquitto:

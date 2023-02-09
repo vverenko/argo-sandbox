@@ -1,0 +1,4 @@
+environments:
+  dev:
+    values:
+      - ./envs/dev/values.yaml

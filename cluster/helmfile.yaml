@@ -13,8 +13,8 @@ releases:
     chart: ./charts/traefik
     values:
       - ./charts/traefik/values.yaml.gotmpl
-  - name: mongodb-app
-    namespace: default
-    chart: ./charts/mongodb
-    values:
-      - ./charts/mongodb/values.yaml.gotmpl
+  # - name: mongodb-app
+  #   namespace: default
+  #   chart: ./charts/mongodb
+  #   values:
+  #     - ./charts/mongodb/values.yaml.gotmpl

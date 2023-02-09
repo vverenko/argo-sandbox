@@ -1,9 +1,9 @@
 data:
   configManagementPlugins: |
     - name: helmfile
-      init:                          # Optional command to initialize application source directory
+      init:
         command: ["argo-cd-helmfile.sh"]
         args: ["init"]
-      generate:                      # Command to generate manifests YAML
+      generate:
         command: ["argo-cd-helmfile.sh"]
         args: ["generate"]

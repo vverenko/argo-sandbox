@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongodb-volume-{{ .Values.volumeSize }}
+spec:
+  capacity:
+    storage: {{ .Values.volumeSize }}Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  {{ if hasKey .Values "efsFsId" }}
+  storageClassName: efs-sc
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: {{ .Values.efsFsId }}::{{ .Values.efsAccessPointId }}
+  {{ else }}
+  storageClassName: manual
+  hostPath:
+    path: "/volumes/mongodb"
+  {{ end }}

@@ -1,0 +1,34 @@
+ingressHost: {{ .Values.domain }}
+
+mongodb:
+  auth:
+    rootUser: mongo
+    rootPassword: {{ .Values.rootPassword }}
+
+  volumePermissions:
+    enabled: true
+
+  persistence:
+    enabled: true
+    mountPath: /bitnami/mongodb
+    existingClaim: mongodb-volume-claim-10
+
+  readinessProbe:
+    enabled: false
+    timeoutSeconds: 60
+    periodSeconds: 60
+
+  livenessProbe:
+    enabled: false
+    timeoutSeconds: 60
+    periodSeconds: 120
+
+  startupProbe:
+    enabled: false
+
+volumeSize: 10
+
+{{ if hasKey .Values "efs" }}
+efsFsId: {{ .Values.efs.id }}
+efsAccessPointId: {{ .Values.efs.accessPoints.mongo }}
+{{ end }}

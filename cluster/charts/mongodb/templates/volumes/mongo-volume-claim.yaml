@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongodb-volume-claim-{{ .Values.volumeSize }}
+spec:
+  accessModes:
+    - ReadWriteMany
+  volumeName: mongodb-volume-{{ .Values.volumeSize }}
+  resources:
+    requests:
+      storage: {{ .Values.volumeSize }}Gi
+  {{ if hasKey .Values "efsFsId" }}
+  storageClassName: efs-sc
+  {{ else }}
+  storageClassName: "manual"
+  {{ end }}

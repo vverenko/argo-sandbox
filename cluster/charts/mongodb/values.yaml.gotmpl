@@ -11,7 +11,7 @@ mongodb:
   persistence:
     enabled: true
     mountPath: /bitnami/mongodb
-    existingClaim: mongodb-volume-claim-10
+    existingClaim: mongodb-volume-claim-15
 
   readinessProbe:
     enabled: false
@@ -26,7 +26,7 @@ mongodb:
   startupProbe:
     enabled: false
 
-volumeSize: 10
+volumeSize: 15
 
 {{ if hasKey .Values "efs" }}
 efsFsId: {{ .Values.efs.id }}

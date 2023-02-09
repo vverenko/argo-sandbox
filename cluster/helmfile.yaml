@@ -4,6 +4,8 @@ bases:
 repositories:
   - name: bitnami
     url: https://charts.bitnami.com/bitnami
+  - name: traefik
+    url: https://helm.traefik.io/traefik
 
 releases:
   - name: traefik

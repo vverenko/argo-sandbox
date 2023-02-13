@@ -1,0 +1,17 @@
+branches: [main]
+
+clone:
+  git:
+    image: plugins/git
+    depth: 1
+
+pipeline:
+  build:
+    image: docker:git
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    commands:
+      - cd deploy
+      - /bin/sh -x deploy.sh
+    secrets:
+      - ssh_deploy_key

@@ -46,9 +46,9 @@ rm -rf temp.yml
     printf 'tags:\n'
     printf '\tnginx: 1.19.0\n'
 	printf '\tnginx: 1.20.0\n'
-} </etc/hosts >yourfile.yaml
+} > temp.yml
 
 
-git add temp.txt
+git add temp.yml
 git commit -m "$COMMIT_MESSAGE"
 git push origin "$TARGET_BRANCH"

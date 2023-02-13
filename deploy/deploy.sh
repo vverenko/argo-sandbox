@@ -40,7 +40,7 @@ git clone --single-branch --depth 1 --branch "$TARGET_BRANCH" "$GIT_CMD_REPOSITO
 
 cd "$CLONE_DIR"
 
-touch test.txt
+touch test.txt && echo "test $RANDOM" > test.txt
 git add test.txt
 git commit -m "$COMMIT_MESSAGE"
 git push origin "$TARGET_BRANCH"

@@ -34,3 +34,10 @@ git --version
 
 CLONE_DIR=$(mktemp -d)
 git clone --single-branch --depth 1 --branch "$TARGET_BRANCH" "$GIT_CMD_REPOSITORY" "$CLONE_DIR"
+
+cd "$CLONE_DIR"
+
+touch test.txt
+git add test.txt
+git commit -m "$COMMIT_MESSAGE"
+git push origin "$TARGET_BRANCH"

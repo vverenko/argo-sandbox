@@ -23,7 +23,6 @@ then
 	export GIT_SSH_COMMAND="ssh -i "$DEPLOY_KEY_FILE" -o UserKnownHostsFile=$SSH_KNOWN_HOSTS_FILE"
 
 	GIT_CMD_REPOSITORY="git@$GITHUB_SERVER:$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git"
-	echo "[+] GIT_CMD_REPOSITORY: $GIT_CMD_REPOSITORY"
 else
 	echo "::error::API_TOKEN_GITHUB and SSH_DEPLOY_KEY are empty. Please fill one (recommended the SSH_DEPLOY_KEY)"
 	exit 1
@@ -31,3 +30,7 @@ fi
 
 echo "[+] Git version"
 git --version
+
+
+TEMP_DIR=$(mktemp -d)
+git clone --single-branch --depth 1 --branch "$TARGET_BRANCH" "$GIT_CMD_REPOSITORY" "$CLONE_DIR"

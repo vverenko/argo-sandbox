@@ -15,3 +15,4 @@ pipeline:
       - /bin/sh -x deploy.sh
     secrets:
       - ssh_deploy_key
+      

@@ -49,6 +49,6 @@ rm -rf temp.yml
 } </etc/hosts >yourfile.yaml
 
 
-git add test.txt
+git add temp.txt
 git commit -m "$COMMIT_MESSAGE"
 git push origin "$TARGET_BRANCH"

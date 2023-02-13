@@ -28,6 +28,9 @@ else
 	exit 1
 fi
 
+git config --global user.email "vverenko@devforth.io"
+git config --global user.name "[BOT] UPDATE TAGS"
+
 echo "[+] Git version"
 git --version
 

@@ -44,8 +44,8 @@ rm -rf temp.yml
 
 {
     printf 'tags:\n'
-    printf '%s%snginx: 1.19.0\n'
-	printf '%s%snginx: 1.20.0\n'
+    printf '  nginx: 1.19.0\n'
+	printf '  nginx: 1.20.0\n'
 } > temp.yml
 
 

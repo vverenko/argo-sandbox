@@ -32,5 +32,5 @@ echo "[+] Git version"
 git --version
 
 
-TEMP_DIR=$(mktemp -d)
+CLONE_DIR=$(mktemp -d)
 git clone --single-branch --depth 1 --branch "$TARGET_BRANCH" "$GIT_CMD_REPOSITORY" "$CLONE_DIR"

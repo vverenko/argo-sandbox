@@ -2,16 +2,11 @@ set -e
 set -u
 
 echo "[+] Action start"
-SOURCE_DIRECTORY="${2}"
-DESTINATION_GITHUB_USERNAME="${3}"
 DESTINATION_REPOSITORY_NAME="argo-sandbox-manifest"
 GITHUB_SERVER="github.com"
-USER_EMAIL="${6}"
-USER_NAME="${7}"
 DESTINATION_REPOSITORY_USERNAME="vverenko"
 TARGET_BRANCH="master"
 COMMIT_MESSAGE="[BOT]update tags"
-TARGET_DIRECTORY="${11}"
 
 if [ -n "${SSH_DEPLOY_KEY:=}" ]
 then

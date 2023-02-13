@@ -6,7 +6,7 @@ DESTINATION_REPOSITORY_NAME="argo-sandbox-manifest"
 GITHUB_SERVER="github.com"
 DESTINATION_REPOSITORY_USERNAME="vverenko"
 TARGET_BRANCH="master"
-COMMIT_MESSAGE="[BOT]update tags"
+COMMIT_MESSAGE="[BOT] update tags"
 
 if [ -n "${SSH_DEPLOY_KEY:=}" ]
 then
@@ -28,7 +28,7 @@ else
 	exit 1
 fi
 
-git config --global user.email "vverenko@devforth.io"
+git config --global user.email "updater@email.com"
 git config --global user.name "[BOT] UPDATE TAGS"
 
 echo "[+] Git version"
